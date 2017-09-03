@@ -1,0 +1,29 @@
+{
+    "name": "randomstate/api",
+    "description": "A flexible API package for PHP.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Connor Imrie",
+            "email": "connor@randomstate.co.uk"
+        }
+    ],
+    "require": {
+        "league/fractal": "^0.17.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.3",
+        "mockery/mockery": "^0.9.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "RandomState\\Api\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "RandomState\\Tests\\Api\\": "tests"
+        }
+    }
+}
