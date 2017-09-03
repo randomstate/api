@@ -1,7 +1,7 @@
 <?php
 
 
-namespace CImrie\Api\Tests\Model\Transformation;
+namespace RandomState\Tests\Api\Model\Transformation;
 
 
 class User {

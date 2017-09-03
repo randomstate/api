@@ -1,10 +1,10 @@
 <?php
 
 
-namespace CImrie\Api\Versioning;
+namespace RandomState\Api\Versioning;
 
 
-use CImrie\Api\Transformation\Manager as TransformManager;
+use RandomState\Api\Transformation\Manager as TransformManager;
 use Closure;
 
 class Version {

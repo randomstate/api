@@ -1,23 +1,50 @@
 <?php
 
 
-namespace CImrie\Api\Transformation\Adapters;
+namespace RandomState\Api\Transformation\Adapters;
 
+
+use League\Fractal\Manager;
+use RandomState\Api\Transformation\Fractal\Switchboard;
 
 abstract class FractalAdapter implements Adapter {
 
-	public function __construct()
-	{
-	}
+	/**
+	 * @var Manager
+	 */
+	protected $manager;
 
-	public function transforms($data)
+	/**
+	 * @var Switchboard
+	 */
+	protected $switchboard;
+
+	/**
+	 * @var array
+	 */
+	protected $includes;
+
+	/**
+	 * @var array
+	 */
+	protected $excludes;
+
+	public function __construct(Manager $manager, Switchboard $switchboard, $includes = [], $excludes = [])
 	{
-		// TODO: Implement transforms() method.
+		$this->manager = $manager;
+		$this->switchboard = $switchboard;
+
+		$this->includes = $includes;
+		$this->excludes = $excludes;
 	}
 
 	public function run($data)
 	{
-		// TODO: Implement run() method.
+		$this->manager->parseIncludes($this->includes);
+		$this->manager->parseExcludes($this->excludes);
+
+		return $this->manager->createData($this->getResource($data))->toArray();
 	}
 
+	abstract function getResource($data);
 }

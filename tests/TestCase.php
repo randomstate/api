@@ -1,7 +1,7 @@
 <?php
 
 
-namespace CImrie\Api\Tests;
+namespace RandomState\Tests\Api;
 
 use Mockery as m;
 

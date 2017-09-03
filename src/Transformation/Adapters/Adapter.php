@@ -1,7 +1,7 @@
 <?php
 
 
-namespace CImrie\Api\Transformation\Adapters;
+namespace RandomState\Api\Transformation\Adapters;
 
 
 interface Adapter {

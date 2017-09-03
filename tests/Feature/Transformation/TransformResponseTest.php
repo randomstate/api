@@ -1,13 +1,13 @@
 <?php
 
 
-namespace CImrie\Api\Tests\Feature\Transformation;
+namespace RandomState\Tests\Api\Feature\Transformation;
 
 
-use CImrie\Api\Tests\Model\Transformation\User;
-use CImrie\Api\Tests\TestCase;
-use CImrie\Api\Transformation\Adapters\Adapter;
-use CImrie\Api\Transformation\Manager;
+use RandomState\Tests\Api\Model\Transformation\User;
+use RandomState\Tests\Api\TestCase;
+use RandomState\Api\Transformation\Adapters\Adapter;
+use RandomState\Api\Transformation\Manager;
 
 use Mockery as m;
 

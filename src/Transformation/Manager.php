@@ -1,10 +1,10 @@
 <?php
 
 
-namespace CImrie\Api\Transformation;
+namespace RandomState\Api\Transformation;
 
 
-use CImrie\Api\Transformation\Adapters\Adapter;
+use RandomState\Api\Transformation\Adapters\Adapter;
 
 class Manager {
 

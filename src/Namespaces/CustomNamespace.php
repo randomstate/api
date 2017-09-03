@@ -1,9 +1,9 @@
 <?php
 
 
-namespace CImrie\Api\Namespaces;
+namespace RandomState\Api\Namespaces;
 
-use CImrie\Api\Versioning\Manager as VersionManager;
+use RandomState\Api\Versioning\Manager as VersionManager;
 
 class CustomNamespace {
 

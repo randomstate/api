@@ -1,17 +1,17 @@
 <?php
 
 
-namespace CImrie\Api\Tests\Feature\Versioning;
+namespace RandomState\Tests\Api\Feature\Versioning;
 
 
-use CImrie\Api\Namespaces\CustomNamespace;
-use CImrie\Api\Namespaces\Manager as NamespaceManager;
-use CImrie\Api\Versioning\Manager as VersionManager;
-use CImrie\Api\Tests\Model\Transformation\User;
-use CImrie\Api\Tests\TestCase;
+use RandomState\Api\Namespaces\CustomNamespace;
+use RandomState\Api\Namespaces\Manager as NamespaceManager;
+use RandomState\Api\Versioning\Manager as VersionManager;
+use RandomState\Tests\Api\Model\Transformation\User;
+use RandomState\Tests\Api\TestCase;
 
-use CImrie\Api\Transformation\Manager as TransformManager;
-use CImrie\Api\Versioning\Version;
+use RandomState\Api\Transformation\Manager as TransformManager;
+use RandomState\Api\Versioning\Version;
 use Mockery as m;
 
 class VersioningTest extends TestCase {

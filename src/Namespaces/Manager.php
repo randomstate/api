@@ -1,10 +1,10 @@
 <?php
 
 
-namespace CImrie\Api\Namespaces;
+namespace RandomState\Api\Namespaces;
 
 
-use CImrie\Api\Transformation\Manager as TransformManager;
+use RandomState\Api\Transformation\Manager as TransformManager;
 use Closure;
 
 class Manager {

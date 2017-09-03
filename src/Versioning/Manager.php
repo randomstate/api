@@ -1,7 +1,7 @@
 <?php
 
 
-namespace CImrie\Api\Versioning;
+namespace RandomState\Api\Versioning;
 
 
 use Closure;

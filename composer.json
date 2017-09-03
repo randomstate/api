@@ -1,12 +1,12 @@
 {
-    "name": "cimrie/api",
+    "name": "randomstate/api",
     "description": "A flexible API package for PHP.",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
             "name": "Connor Imrie",
-            "email": "connorimrie@outlook.com"
+            "email": "connor@randomstate.co.uk"
         }
     ],
     "require": {
@@ -18,12 +18,12 @@
     },
     "autoload": {
         "psr-4": {
-            "CImrie\\Api\\": "src"
+            "RandomState\\Api\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "CImrie\\Api\\Tests\\": "tests"
+            "RandomState\\Tests\\Api\\": "tests"
         }
     }
 }
