@@ -46,5 +46,5 @@ abstract class FractalAdapter implements Adapter {
 		return $this->manager->createData($this->getResource($data))->toArray();
 	}
 
-	abstract function getResource($data);
+	abstract public function getResource($data);
 }

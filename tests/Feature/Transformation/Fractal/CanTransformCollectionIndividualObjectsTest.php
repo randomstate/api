@@ -12,7 +12,7 @@ use RandomState\Api\Transformation\Fractal\Switchboard;
 use RandomState\Api\Transformation\Manager;
 use RandomState\Tests\Api\TestCase;
 
-class CanTransformIndividualObjectsTest extends TestCase {
+class CanTransformCollectionIndividualObjectsTest extends TestCase {
 
 	/**
 	 * @test
