@@ -40,4 +40,15 @@ class Manager {
 	{
 		return $this->versions[$identifier];
 	}
+
+	/**
+	 * @return Version | null
+	 */
+	public function current()
+	{
+		$size = count($this->versions);
+		$last = array_values($this->versions)[$size-1] ?? null;
+
+		return $last;
+	}
 }
