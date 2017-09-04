@@ -77,4 +77,25 @@ class VersioningTest extends TestCase {
 
 		$this->assertEquals($output, $user);
 	}
+
+	/**
+	 * @test
+	 */
+	public function can_get_last_registered_version_with_helper_method()
+	{
+		$versions      = $this->manager->getNamespace()
+		                                     ->versions();
+		$transformManager    = m::mock(TransformManager::class);
+		$newTransformManager = m::mock(TransformManager::class);
+
+		$versions->register('1.0', function() use ($transformManager) {
+			return $transformManager;
+		});
+		$versions->register('1.1', function() use ($newTransformManager) {
+			return $newTransformManager;
+		})
+		               ->inherit('1.0');
+
+		$this->assertEquals($newTransformManager, $versions->current()->getTransformManager());
+	}
 }
