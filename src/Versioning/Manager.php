@@ -51,4 +51,9 @@ class Manager {
 
 		return $last;
 	}
+
+	public function identify(Version $version)
+	{
+		return array_search($version, $this->versions, true);
+	}
 }

@@ -98,4 +98,25 @@ class VersioningTest extends TestCase {
 
 		$this->assertEquals($newTransformManager, $versions->current()->getTransformManager());
 	}
+
+	/**
+	 * @test
+	 */
+	public function can_reverse_lookup_version_identifier()
+	{
+		$versions      = $this->manager->getNamespace()
+		                               ->versions();
+		$transformManager    = m::mock(TransformManager::class);
+		$newTransformManager = m::mock(TransformManager::class);
+
+		$versions->register('1.0', function() use ($transformManager) {
+			return $transformManager;
+		});
+		$versions->register('1.1', function() use ($newTransformManager) {
+			return $newTransformManager;
+		})
+		         ->inherit('1.0');
+
+		$this->assertEquals('1.0', $versions->identify($versions->get('1.0')));
+	}
 }
