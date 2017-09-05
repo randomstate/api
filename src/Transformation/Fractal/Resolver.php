@@ -85,6 +85,10 @@ class Resolver {
 			return $this->binds[$class] = $transformer();
 		}
 
+		if(!is_string($transformer)){
+			return $transformer;
+		}
+
 		return $this->binds[$class] = ($this->factory)($transformer);
 	}
 }
