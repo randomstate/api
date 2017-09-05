@@ -3,9 +3,10 @@
 
 namespace RandomState\Api\Namespaces;
 
+use RandomState\Api\Api;
 use RandomState\Api\Versioning\Manager as VersionManager;
 
-class CustomNamespace {
+class CustomNamespace implements Api {
 
 	/**
 	 * @var VersionManager

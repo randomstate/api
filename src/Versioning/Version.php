@@ -29,6 +29,11 @@ class Version {
 		$this->transformResolver = $transformResolver;
 	}
 
+	/**
+	 * @param string $versionIdentifier
+	 *
+	 * @return $this
+	 */
 	public function inherit($versionIdentifier)
 	{
 		$this->fallback = $this->manager->get($versionIdentifier);
