@@ -66,12 +66,6 @@ class Resolver {
             $class = get_class($class);
         }
 
-        // if not found one, recursively go up the inheritance chain until nothing left
-        $reflection = new \ReflectionClass($class);
-        if($reflection->getParentClass()) {
-            return $this->get($reflection->getParentClass()->getName());
-        }
-
         if(is_string($class) && class_exists($class)) {
             return $this->resolve($class);
         }
@@ -84,7 +78,13 @@ class Resolver {
 		$transformer = $this->binds[$class] ?? null;
 
 		if(!$transformer) {
-			return null;
+            // if not found one, recursively go up the inheritance chain until nothing left
+            $reflection = new \ReflectionClass($class);
+            if($reflection->getParentClass()) {
+                return $this->get($reflection->getParentClass()->getName());
+            }
+
+            return null;
 		}
 
 		if($transformer instanceof Closure) {
