@@ -62,15 +62,21 @@ class Resolver {
 
 	public function get($class)
 	{
-		if(is_object($class)) {
-			$class = get_class($class);
-		}
+        if(is_object($class)) {
+            $class = get_class($class);
+        }
 
-		if(is_string($class) && class_exists($class)) {
-			return $this->resolve($class);
-		}
+        // if not found one, recursively go up the inheritance chain until nothing left
+        $reflection = new \ReflectionClass($class);
+        if($reflection->getParentClass()) {
+            return $this->get($reflection->getParentClass()->getName());
+        }
 
-		return $this->binds[$class] ?? null;
+        if(is_string($class) && class_exists($class)) {
+            return $this->resolve($class);
+        }
+
+        return $this->binds[$class] ?? null;
 	}
 
 	protected function resolve($class)
