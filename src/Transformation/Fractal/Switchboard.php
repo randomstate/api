@@ -58,4 +58,9 @@ class Switchboard extends TransformerAbstract {
 	{
 		return call_user_func([$this->currentTransformer, $name], ...$arguments);
 	}
+
+    public function transforms($data)
+    {
+        return $this->resolver->get($data) ?? false;
+    }
 }

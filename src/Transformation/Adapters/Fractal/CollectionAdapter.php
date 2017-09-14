@@ -12,7 +12,16 @@ class CollectionAdapter extends FractalAdapter {
 
 	public function transforms($data)
 	{
-		return is_array($data) || $data instanceof ArrayAccess;
+	    $isArrayable = (is_array($data) || $data instanceof ArrayAccess);
+	    $canTransformEach = true;
+
+	    if($isArrayable) {
+	        foreach($data as $datum) {
+	            $canTransformEach = $canTransformEach && $this->switchboard->transforms($datum);
+            }
+        }
+
+        return $isArrayable && $canTransformEach;
 	}
 
 	function getResource($data)
