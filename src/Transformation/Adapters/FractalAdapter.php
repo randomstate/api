@@ -43,20 +43,5 @@ abstract class FractalAdapter implements Adapter {
         return $this->manager->createData($this->getResource($data))->toArray();
 	}
 
-    public function include(array $includes)
-    {
-        $this->manager->parseIncludes($includes);
-
-        return $this;
-    }
-
-    public function exclude(array $excludes)
-    {
-        $this->manager->parseExcludes($excludes);
-
-        return $this;
-    }
-
-
     abstract public function getResource($data);
 }

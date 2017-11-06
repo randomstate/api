@@ -55,11 +55,12 @@ class CanTransformCollectionIndividualObjectsTest extends TestCase {
 		$manager = new Manager();
 		$manager->register(
 			new CollectionAdapter(
-				new \League\Fractal\Manager(),
-				new Switchboard($resolver = new Resolver()),
-				['winning_ticket']
+				$fractalManager = new \League\Fractal\Manager(),
+				new Switchboard($resolver = new Resolver())
 			)
 		);
+
+		$fractalManager->parseIncludes(['winning_ticket']);
 
 		$resolver->bind(RaffleTicket::class, RaffleTicketTransformer::class);
 		$resolver->bind(Prize::class, PrizeTransformer::class);
