@@ -31,7 +31,22 @@ class ScalarAdapter implements Adapter {
 		return new Primitive($data, new ScalarTransformer);
 	}
 
-	public function run($data)
+    public function include(array $includes)
+    {
+        $this->manager->parseIncludes($includes);
+
+        return $this;
+    }
+
+    public function exclude(array $excludes)
+    {
+        $this->manager->parseExcludes($excludes);
+
+        return $this;
+    }
+
+
+    public function run($data)
 	{
 		return [
 			'data' => $this->manager->createData($this->getResource($data))->transformPrimitiveResource()
