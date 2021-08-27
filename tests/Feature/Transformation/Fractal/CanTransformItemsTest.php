@@ -34,7 +34,7 @@ class CanTransformItemsTest extends TestCase {
 	 */
 	protected $resolver;
 
-	protected function setUp()
+	protected function setUp() : void
 	{
 		parent::setUp();
 

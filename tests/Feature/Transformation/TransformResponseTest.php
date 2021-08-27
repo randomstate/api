@@ -18,7 +18,7 @@ class TransformResponseTest extends TestCase {
 	 */
 	protected $transformer;
 
-	protected function setUp()
+	protected function setUp() : void
 	{
 		parent::setUp();
 

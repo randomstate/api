@@ -49,7 +49,7 @@ class Resolver {
 			$parameters = $method->getParameters();
 
 			if(count($parameters) === 1) {
-				$typeHint = $parameters[0]->getClass()->getName();
+				$typeHint = $parameters[0]->getType()->getName();
 
 				$this->binds[$typeHint] = $transformer->name;
 
