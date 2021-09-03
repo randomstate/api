@@ -12,7 +12,7 @@ class ItemAdapter extends FractalAdapter {
 
 	public function transforms($data)
 	{
-		return is_object($data) && !(is_array($data) || $data instanceof ArrayAccess);
+		return is_object($data);
 	}
 
 	public function getResource($data)
